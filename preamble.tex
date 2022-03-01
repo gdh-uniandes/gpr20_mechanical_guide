@@ -1,0 +1,53 @@
+% ==========================================================
+%   GPR-20 MANUALS PREAMBLE
+% ==========================================================
+
+% ==========================================================
+% Includes packages
+\usepackage{float}
+\usepackage{parskip}
+\usepackage{caption}
+\usepackage{ltablex}
+\usepackage{titlesec}
+\usepackage{hyperref}
+\usepackage{setspace}
+\usepackage{graphicx}
+\usepackage{csvsimple}
+\usepackage{xltabular}
+\usepackage{subcaption}
+\usepackage{indentfirst}
+\usepackage[utf8]{inputenc}
+\usepackage[margin=1in]{geometry}
+\usepackage[type={CC}, modifier={by-nc}, version={4.0}]{doclicense}
+\usepackage{subfiles}
+% ==========================================================
+
+% ==========================================================
+% PREAMBLE SETTINGS
+
+% Table configuration
+\keepXColumns
+
+% Sets double spacing
+\doublespacing
+
+% Sets paragraph indentation
+\setlength{\parindent}{1em}
+
+% Sets paragraph skip
+\setlength{\parskip}{2em}
+
+% Start new page on section change
+\newcommand{\sectionbreak}{\clearpage}
+% ==========================================================
+
+
+% Adds bibliography
+\usepackage[style=numeric]{biblatex}
+\bibliography{biblio.bib}
+
+\newcommand{\fakesubsubsection}[1]{%
+    \par\refstepcounter{subsubsection}%
+    \subsubsectionmark{#1}%
+    \addcontentsline{toc}{subsubsection}{\protect\numberline{\thesubsubsection}#1}
+}
