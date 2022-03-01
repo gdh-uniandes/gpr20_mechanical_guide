@@ -1,0 +1,835 @@
+\documentclass{article}
+
+% Includes preamble from standard file
+\input{preamble}
+
+% Defines command to insert name
+\newcommand{\GPRManualName}{Mechanical Structure Guide}
+
+% ==========================================================
+% DOCUMENT INFORMATION
+\title{GPR-20: Mechanical Structure Guide}
+\author{Grupo de Desminado Humanitario}
+\date{July 2021}
+% ==========================================================
+
+\begin{document}
+
+\subfile{front}
+
+\newpage
+\section{Introduction}
+The GPR-20 robot aims to collect data from remote areas in Colombia, where Improvised Explosive Devices (IEDs) are usually placed. In order to fulfill its task, the robot must have a strong and robust mechanical structure that is able to support and move the Ground Penetrating Radar (GPR) over the survey area. The mechanical structure of the robot must posses features that make it able to overcome non-leveled terrain and reduce vibrations from movement. This document, the mechanical structure guide, presents the mechanical structure of the GPR-20 robot, detailing its major and minor components and elements. 
+
+The mechanical structure is based on the idea of a Cartesian coordinate robot i.e. a robot that moves linearly along its different degrees of freedom. The linear part of the robot will be used to move the GPR over two axes (X and Y) to allow acquiring data from a survey area. The linear Cartesian coordinate robot is complemented with the capability of rotating over the Z axis, to provide the GPR with dual polarization measurements. Finally, the mechanical structure must include a case in which power and electronics systems are stored.
+
+Most of the mechanical structure was manufactured using a standard Fused Deposition Modeling (FDM) 3D printing process. Elements that could not be 3D-printed, were acquired from third-party vendors. Those elements consist of linear rods, PVC tubing and mechanical couplers that, to the best of our knowledge, can be easily acquired worldwide. Because of the 3D-printing and the easily-acquired elements, we consider that the mechanical structure of the robot can be easily replicated. 
+
+GPR-20 mechanical structure can be divided into four major groups: ground support group, Cartesian arm support group, GPR support group and electronics box group. The ground support group allows the robot to work firmly on an irregular surface. The Cartesian arm support group are the elements that hold the elements required for the Cartesian arm to work. The GPR support group holds both the vector network analyzer (VNA) and the antennae that probes the ground. Finally, the electronics box group keeps the electronics and power components safely from the environment.
+
+This document is divided into three major sections: an overview of the mechanical structure presented in section \ref{sec:overview}, a discussion on the manufacture processes and its cost on section \ref{sec:manufacture}, and detailed information on each of the components that comprise the mechanical structure on section \ref{sec:components}.
+
+\newpage
+\section{Overview} \label{sec:overview}
+The GPR-20 robot is presented in figure \ref{fig:robot}, in which the mechanical structure of the robot can be identified. The mechanical structure is divided into four major groups: ground support group, Cartesian arm support group, GPR support group and electronics box group. The ground support groups consists of elements that raise the robot to allow the movement of the GPR above the ground while keeping it leveled and stable. The Cartesian arm robot are the group of elements that allow the GPR support group to move within the sample area. The GPR support group keeps the VNA and the antennae steady. Finally, the electronics box keeps the electronic and power components safe from the environment.
+
+\begin{figure}[h]
+    \centering
+    \includegraphics[width=0.8\textwidth]{images/groups/robot.png}
+    \caption{GPR-20 robot render, in which the mechanical structure can be identified.}
+    \label{fig:robot}
+\end{figure}
+
+Figure \ref{fig:ground_support} shows the ground support group. This group consist of a unique ground support element that is replicated four times. The group of support elements distribute the weight of the robot in the ground and provide leveling capabilities for the rest of the robot. Each ground support element has eighth (8) minor components, which consist of four custom parts and four third-party components. The most relevant third-party component of the ground support element is the PVC tubing since it determines the overall height of the robot. The length of the PVC tubing can be changed depending on the antennae selection and the measurement conditions.
+
+\begin{figure}[h]
+    \centering
+    \includegraphics[width=0.9\textwidth]{images/groups/ground_group.png}
+    \caption{GPR-20 ground support group.}
+    \label{fig:ground_support}
+\end{figure}
+
+Figure \ref{fig:cartesian_arm} presents the Cartesian arm support group. The Cartesian arm provides the linear movement of the robot over two degrees of freedom. The movement of the Cartesian arm allows the GPR to acquire data from the survey area. The maximum movement over both axes is approximately 700 millimeters per axis. The Cartesian arm moves using three NEMA 23 motors: two for the X axis and one for the Y axis. The rotational movement of the motors is converted to a linear movement using a lead screw. Two parallel rods are used next to the lead screw to provide stability.
+
+\begin{figure}[h]
+    \centering
+    \includegraphics[width=0.9\textwidth]{images/groups/cartesian_arm.png}
+    \caption{GPR-20 Cartesian arm group.}
+    \label{fig:cartesian_arm}
+\end{figure}
+
+Figure \ref{fig:gpr_support} presents the GPR support group. The GPR support group are the components that hold both the Vector Network Analyzer (VNA) and the antennae. The GPR support group includes two NEMA 17 motors that rotate the antennae. The antennae rotation is used to gather data in two polarizations. The GPR support group is elongated to provide enough room for the electronics box to get below the VNA thus increasing the survey area.
+
+\begin{figure}[h]
+    \centering
+    \includegraphics[width=0.9\textwidth]{images/groups/vna_holder.png}
+    \caption{GPR-20 GPR support group.}
+    \label{fig:gpr_support}
+\end{figure}
+
+Figure \ref{fig:electronics_box} presents the electronics box group. The electronics box keeps the power and electronic components safe from the environment. The electronics box also includes a support for a touch screen, which is used to input the user commands. The electronics box aims to have the systems organized within the robot and to allow for changes without major mechanical modifications. 
+
+\begin{figure}[h]
+    \centering
+    \includegraphics[width=0.9\textwidth]{images/groups/electronics_box.png}
+    \caption{GPR-20 electronic box group.}
+    \label{fig:electronics_box}
+\end{figure}
+
+The robot was designed using \href{https://www.autodesk.com/products/inventor/overview}{Autodesk Inventor} with files stored in four repositories. Autodesk Inventor was used because it allows a professional development environment. The repositories includes both the design and ready-to-use files. The reader will find the description and instructions in the repositories. Links to the repositories are presented in table \ref{tab:mechanical_structure_repos}. The repositories include the STL files, which are used to generate the G-Code for 3D printing the parts, and IPT files that are used to modify the parts in Inventor. Assemblies of the groups are also included in the repositories.
+
+\begin{singlespace}
+    \begin{xltabular}{\textwidth}{|p{4cm}|X|}
+        
+        \hline \multicolumn{2}{|c|}{\textbf{Repositories}} \\ \hline
+        \textbf{Group} & \textbf{Link} \\ \hline
+        \endhead
+        
+        \multicolumn{2}{|c|}{\textit{Continues in next page.}} \\ \hline
+        \endfoot
+        
+        \caption{GPR-20 mechanical structure repositories.} \label{tab:mechanical_structure_repos}
+        \endlastfoot
+        
+        Ground Support & \url{https://github.com/gdh-uniandes/gpr20_ground_support} \\ \hline
+        Cartesian Arm & \url{https://github.com/gdh-uniandes/gpr20_cartesian_arm} \\ \hline
+        VNA Holder & \url{https://github.com/gdh-uniandes/gpr20_vna_holder} \\ \hline
+        Electronics Box & \url{https://github.com/gdh-uniandes/gpr20_electronics_box} \\ \hline
+    \end{xltabular}
+\end{singlespace}
+
+\newpage
+\section{Manufacture and Costs} \label{sec:manufacture}
+This section presents and overview of the manufacture process and the cost calculation for each custom part used in the GPR-20. The manufacture process is performed using FDM 3D printing. The device used for the 3D printing is an Anycubic Chiron printer. The slicer software used for the process is \href{https://ultimaker.com/en/software/ultimaker-cura}{Cura} from Ultimaker. Table \ref{tab:3d_printing_setup} presents the setup used in the slicer software for 3D printing the custom parts.
+
+\begin{table}[h]
+    \centering
+    \begin{tabular}{|c|c|}
+        \textbf{Parameter} & \textbf{Value} \\ \hline
+        Layer Height & 0.2 mm \\
+        Wall Thickness & 1.2 mm \\
+        Top/Bottom Thickness & 1.2 mm \\
+        Infill Density & 10\% \\
+        Infill Pattern & Cubic \\
+        Printing Temperature & $200^{\circ}$ C \\
+        Build Plate Temperature & $60^{\circ}$ C \\
+        Print Speed & 50 mm/s \\
+        Travel Speed & 100 mm/s
+    \end{tabular}
+    \caption{Slicer software setup for the 3D printing process.}
+    \label{tab:3d_printing_setup}
+\end{table}
+
+Cost calculation can be calculated with two variables: amount of material ($m$) used for the part and print time ($t$). Equation (\ref{eq:part_cost}) presents the formula used for cost calculation for each custom part of the GPR-20 robot. This equation takes into account three parameters: material cost ($c_{m}$), energy cost ($c_{e}$) and power consumption for the 3D printer ($P_p$).
+
+\begin{equation}
+    C(m, t; c_{m}, c_{e}) = m \cdot c_m + t \cdot P_p \cdot c_e
+    \label{eq:part_cost}
+\end{equation}
+
+The total cost of manufacturing a custom part for the GPR-20 robot will be in the units of United States Dollars. Material amount ($m$) is expected to be in units of grams and print time ($t$) in hours. Material cost parameter ($c_m$) is expected to be in units of dollars per gram, energy cost ($c_e$) in dollars per kilowatt-hour and power consumption ($P_p$) in kilowatts.
+
+\begin{table}[h]
+    \centering
+    \begin{tabular}{|c|c|}
+        \textbf{Specification} & \textbf{Value} \\ \hline
+        Material Amount & 1375 grams \\
+        Print Time & 57.15 hours \\
+        Material Cost & 0.022 USD/g \\
+        Energy Cost & 0.178 USD/kWh \\
+        Power Consumption & 0.6kW \\
+    \end{tabular}
+    \caption{Example specification for calculating the cost of a custom manufactured part.}
+    \label{tab:cost_example}
+\end{table}
+
+Table \ref{tab:cost_example} presents a set of specification for calculating the cost of an example part. This part would require 1375 grams of material and a printing time of 57.15 hours. The commercial value for a reel of 1000 grams of PLA filament is 22 USD and the example energy cost is 0.178 USD/kWh. Finally, the used 3D printer consumes 0.6kWh during its operation. By computing the cost using equation (\ref{eq:part_cost}) it is possible to estimate that this part would cost 36.35 USD.
+
+STL files for the robot part are found in the four repositories of the GPR-20 mechanical structure. STL files are a \textit{de facto} standard for 3D models. These files are used in Cura to generate the G-Code required for the 3D printing process. No G-Code files are shared since they depend on specific setup values for the 3D printer and the filament.
+
+\newpage
+\section{Components} \label{sec:components}
+This section presents detailed information on the major groups of the GPR-20 robot mechanical structure. The major groups that will be presented are the ground support, the Cartesian arm support, the ground penetrating radar (GPR) and the electronics box. Each group is presented as a whole and then a set of subsections in which the custom components are presented. Besides from presenting the technical details, costs are also presented to give a sense on the value for the whole mechanical structure.
+
+\subsection{Ground Support}
+
+\begin{figure}[h]
+    \centering
+    \includegraphics[width=0.6\textwidth]{images/ground.png}
+    \caption{Ground support element.}
+    \label{fig:ground_support_element}
+\end{figure}
+
+The ground support group are the set of elements that provide support to the mechanical structure. Its main function is to provide a solid and robust contact with the soil. The ground support group also provides leveling capabilities to the structure in order to improve the data acquisition quality. Figure \ref{fig:ground_support_element} presents a single ground support element. The ground support group consists of four replications of the ground support element. Table \ref{tab:ground_support} presents the cost summary for a single ground support element.
+
+\begin{table}[h]
+    \centering
+    \csvreader[tabular = |c|c|c|,
+        table head=\hline \textbf{Name} & \textbf{Used Filament [gr]} & \textbf{Cost [USD]}  \\ \hline,
+        late after line =\\,
+        late after last line = \\\hline,
+        respect underscore = true
+    ]%
+    {data/ground_summary.csv}%
+    {cname=\cname, filament=\filament, cost=\cost}%
+    {\cname & \filament & \cost}%
+    \caption{Summary of the cost and filament usage for each ground support element.}
+    \label{tab:ground_support}
+\end{table}
+
+A ground support element is made from four custom parts manufactured using PLA and the FDM 3D printing process. Third-party parts include a two-inches PVC tube and some metric screws with their corresponding inserts. A M7 screw is used to provide the leveling capabilities of the ground support element. The rotation of the M7 screw changes the height of the ground support element, thus adjusting for the terrain elevation changes. Height changes from the M7 screw depend on the latter length. However, it is recommended to allow for a maximum of $30$ millimeters height adjustment. The following subsections will introduce the custom parts used in a single element with the last subsection devoted to third-party components.
+
+\fakesubsubsection{Component 0}
+
+\begin{tabularx}{\linewidth}{|p{4cm}|X|}
+    \hline \multicolumn{2}{|c|}{\textbf{Ground Support: Component 0}} \\ \hline
+    \textbf{STL File} & \href{https://github.com/gdh-uniandes/gpr20_ground_support/tree/main/stl}{ground\_support\_0.stl} \\ \hline
+    \textbf{IPT File} & \href{https://github.com/gdh-uniandes/gpr20_ground_support/tree/main/ipt}{ground\_support\_0.ipt} \\ \hline
+    \textbf{Image} & \raisebox{-\height}{\centering \includegraphics[width=0.4\textwidth, trim=2cm 4cm 2cm 4cm, clip]{images/parts/ground/0/ground_support_0.png}} \\ \hline
+    \textbf{Description} & This is the part that makes contact with the soil of ground support element. The part has a hole in its center to accommodate the leveling M7 screw. The M7 leveling screw is fixed in place with a nut. A hole for the M7 screw nut is extruded in the top part of the component. \\ \hline
+    \textbf{Source} & Custom part. Manufactured using the FDM 3D printing process with PLA as raw material. Requires 64 grams of PLA and 6.62 hours of print time using the standard manufacture setup. \\ \hline
+    \textbf{Cost} & 2.18 USD. \\ \hline
+    \textbf{Blueprints} & \raisebox{-\height}{\centering \includegraphics[width=0.3\textwidth]{images/parts/ground/0/tech.jpg}} \\ \hline
+\end{tabularx}
+
+\clearpage
+
+\fakesubsubsection{Component 1}
+
+\begin{tabularx}{\linewidth}{|p{4cm}|X|}
+    \hline \multicolumn{2}{|c|}{\textbf{Ground Support: Component 1}} \\ \hline
+    \textbf{STL File} & \href{https://github.com/gdh-uniandes/gpr20_ground_support/tree/main/stl}{ground\_support\_1.stl} \\ \hline
+    \textbf{IPT File} & \href{https://github.com/gdh-uniandes/gpr20_ground_support/tree/main/ipt}{ground\_support\_1.ipt} \\ \hline
+    \textbf{Image} & \raisebox{-\height}{\centering \includegraphics[width=0.4\textwidth, trim=2cm 4cm 2cm 4cm, clip]{images/parts/ground/1/ground_support_1.png}} \\ \hline
+    \textbf{Description} & This part is used to keep a secondary nut of the M7 leveling screw thus allowing changing the ground support element height. The part is connected to \textit{component 0} through the M7 leveling screw, to \textit{component 2} using four (4) M2 screws, and to \textit{component 3} using four (4) M3 screws. The screws used for the \textit{component 2} require four (4) inserts placed in the internal holes of the part. The screws used for the \textit{component 3} connection require four (4) inserts to be placed in top of the part. \\ \hline
+    \textbf{Source} & Custom part. Manufactured using the FDM 3D printing process with PLA as raw material. Requires 63 grams of PLA and 5.58 hours of print time using the standard manufacture setup. \\ \hline
+    \textbf{Cost} & 2.05 USD. \\ \hline
+    \textbf{Blueprints} & \raisebox{-\height}{\centering \includegraphics[width=0.3\textwidth]{images/parts/ground/1/tech.png}} \\ \hline
+\end{tabularx}
+
+\clearpage
+
+\fakesubsubsection{Component 2}
+
+\begin{tabularx}{\linewidth}{|p{4cm}|X|}
+    \hline \multicolumn{2}{|c|}{\textbf{Ground Support: Component 2}} \\ \hline
+    \textbf{STL File} & \href{https://github.com/gdh-uniandes/gpr20_ground_support/tree/main/stl}{ground\_support\_2.stl} \\ \hline
+    \textbf{IPT File} & \href{https://github.com/gdh-uniandes/gpr20_ground_support/tree/main/ipt}{ground\_support\_2.ipt} \\ \hline
+    \textbf{Image} & \raisebox{-\height}{\centering \includegraphics[width=0.4\textwidth, trim=2cm 4cm 2cm 4cm, clip]{images/parts/ground/2/ground_support_2.png}} \\ \hline
+    \textbf{Description} & This part solely purpose is to prevent the secondary nut of the M7 leveling screw from moving vertically. By preventing the vertical movement of this secondary nut, it is possible to change the ground support element height. The part is fixed to \textit{component 1} using four (4) M2 screws. \\ \hline
+    \textbf{Source} & Custom part. Manufactured using the FDM 3D printing process with PLA as raw material. Requires 2 grams of PLA and 0.15 hours of print time using the standard manufacture setup. \\ \hline
+    \textbf{Cost} & 0.23 USD. \\ \hline
+    \textbf{Blueprints} & \raisebox{-\height}{\centering \includegraphics[width=0.4\textwidth]{images/parts/ground/2/tech.png}} \\ \hline
+\end{tabularx}
+
+\clearpage
+
+\fakesubsubsection{Component 3}
+
+\begin{tabularx}{\linewidth}{|p{4cm}|X|}
+    \hline \multicolumn{2}{|c|}{\textbf{Ground Support: Component 3}} \\ \hline
+    \textbf{STL File} & \href{https://github.com/gdh-uniandes/gpr20_ground_support/tree/main/stl}{ground\_support\_3.stl} \\ \hline
+    \textbf{IPT File} & \href{https://github.com/gdh-uniandes/gpr20_ground_support/tree/main/ipt}{ground\_support\_3.ipt} \\ \hline
+    \textbf{Image} & \raisebox{-\height}{\centering \includegraphics[width=0.4\textwidth, trim=2cm 4cm 2cm 4cm, clip]{images/parts/ground/3/ground_support_3.png}} \\ \hline
+    \textbf{Description} & This part serves as the adapter between the 2inch PVC tube and the ground support element base. The part is connected to \textit{component 1} using four (4) M3 screws. The PVC tube can be attached to the part using four M5 screws although they are not necessary for a secure fit. \\ \hline
+    \textbf{Source} & Custom part. Manufactured using the FDM 3D printing process with PLA as raw material. Requires 63 grams of PLA and 5.27 hours of print time using the standard manufacture setup. \\ \hline
+    \textbf{Cost} & 2.01 USD. \\ \hline
+    \textbf{Blueprints} & \raisebox{-\height}{\centering \includegraphics[width=0.4\textwidth]{images/parts/ground/3/tech.png}} \\ \hline
+\end{tabularx}
+
+\subsubsection{Ground Support: Third-Party Components}
+Third-party components used for a ground support elements are a two-inch PVC pipe, a set of screws, brass inserts and nuts. Table \ref{tab:ground_third_party} presents a summary of the required components to build a ground support element. M2 screws and inserts are used to merge components 1 and 2: inserts are introduced into component 1 and screws hold component 2 in place. M3 screws and inserts are used to join components 1 and 3: inserts are introduced into component 1 and screws hold component 3 in place. 
+
+\begin{table}[h]
+    \centering
+    \begin{tabular}{|c|c|}
+        \textbf{Component} & \textbf{Quantity} \\ \hline
+        M2 Screws & 4 \\
+        M3 Screws & 4 \\
+        M7 Screws & 1 \\
+        M7 Nuts & 2 \\
+        PVC Tubing & 1 \\
+    \end{tabular}
+    \caption{Summary of the third party components used in the ground support group of the GPR-20 robot.}
+    \label{tab:ground_third_party}
+\end{table}
+
+The M7 screw presented in table \ref{tab:ground_third_party} is the aforementioned leveling screw. The screw is held in place using two nuts. The first M7 nut is used in the component 0 to secure the screw in place, while the second nut is secured on the component 1 by the component 2. The second nut is the one that converts the rotation of the leveling screw into linear movement. 
+
+Finally, the PVC tubing is merged into the custom parts by the component 3. The length of the PVC tubing in the ground support element will determine the height of the antennae to the ground. Thus the PVC length must be determined depending on the survey requirements. It is important to remark that PVC length must be equal for each ground support element.
+
+\subsection{Cartesian Arm Support}
+
+\begin{figure}[h]
+    \centering
+    \includegraphics[width=0.7\textwidth]{images/groups/cartesian_arm.png}
+    \caption{Cartesian arm group.}
+    \label{fig:cartesian_arm_group}
+\end{figure}
+
+The Cartesian arm group (shown on figure \ref{fig:cartesian_arm_group}) are the set of components that perform the mechanical movement of the linear axis in the GPR-20 robot. The Cartesian arm group is able to move the GPR support group using three NEMA 23 motors. The rotational movement from the motors is converted to a transnational movement by a linear screw. To improve the stability on both axes, two linear rods are located parallel to linear screws. The group itself consists of eight (8) custom components. Table \ref{tab:cartesian_arm} presents the custom components list and the estimated cost of manufacturing.
+
+\begin{table}[h]
+    \centering
+    \csvreader[tabular = |c|c|c|,
+        table head=\hline \textbf{Name} & \textbf{Used Filament [gr]} & \textbf{Cost [USD]}  \\ \hline,
+        late after line =\\,
+        late after last line = \\\hline,
+        respect underscore = true
+    ]%
+    {data/cartesian_summary.csv}%
+    {cname=\cname, filament=\filament, cost=\cost}%
+    {\cname & \filament & \cost}%
+    \caption{Summary of the cost and filament usage.}
+    \label{tab:cartesian_arm}
+\end{table}
+
+\clearpage
+
+\fakesubsubsection{Left Axis Driver}
+
+\begin{tabularx}{\linewidth}{|p{4cm}|X|}
+    \hline \multicolumn{2}{|c|}{\textbf{Cartesian Arm: Left Axis Driver}} \\ \hline
+    \textbf{STL File} & \href{https://github.com/gdh-uniandes/gpr20_cartesian_arm/tree/main/stl}{left\_axis\_driver.stl} \\ \hline
+    \textbf{IPT File} & \href{https://github.com/gdh-uniandes/gpr20_cartesian_arm/tree/main/ipt}{left\_axis\_driver.ipt} \\ \hline
+    \textbf{Image} & \raisebox{-\height}{\centering \includegraphics[width=0.4\textwidth]{images/parts/arm/left_driver/x_axis_left_driver.png}} \\ \hline
+    \textbf{Description} & This part holds a NEMA 23 stepper motor that is in charge of the movement along the X axis of the Cartesian arm. This component has screw holes in its front to attach the NEMA 23 motor and two supports for the steel rods. The \textit{X axis extender} is attached on top of the part. A connector for a ground support element is provided in its bottom. A connector for the lateral PVC tube is provided in its right side. \\ \hline
+    \textbf{Source} & Custom part. Manufactured using the FDM 3D printing process with PLA as raw material. Requires 345 grams of PLA and 23.93 hours of print time using the standard manufacture setup. \\ \hline
+    \textbf{Cost} & 10.49 USD. \\ \hline
+    \textbf{Blueprints} & \raisebox{-\height}{\centering \includegraphics[width=0.6\textwidth]{images/parts/arm/left_driver/tech.png}} \\ \hline
+\end{tabularx}
+
+\clearpage
+
+\fakesubsubsection{Left Axis Auxiliary}
+
+\begin{tabularx}{\linewidth}{|p{4cm}|X|}
+    \hline \multicolumn{2}{|c|}{\textbf{Cartesian Arm: Left Axis Auxiliary}} \\ \hline
+    \textbf{STL File} & \href{https://github.com/gdh-uniandes/gpr20_cartesian_arm/tree/main/stl}{left\_axis\_aux.stl} \\ \hline
+    \textbf{IPT File} & \href{https://github.com/gdh-uniandes/gpr20_cartesian_arm/tree/main/ipt}{left\_axis\_aux.ipt} \\ \hline
+    \textbf{Image} & \raisebox{-\height}{\centering \includegraphics[width=0.4\textwidth]{images/parts/arm/left_aux/x_axis_left_aux.png}} \\ \hline
+    \textbf{Description} & This part serves as the auxiliary support for the \textit{left axis driver} on the X axis of the Cartesian arm. This parts allows to screw in the supports for the linear screw and the stability rods in its front. The bottom of the part provides a connector for a ground support element. The right side also has a connector for the lateral PVC tube. \\ \hline
+    \textbf{Source} & Custom part. Manufactured using the FDM 3D printing process with PLA as raw material. Requires 350 grams of PLA and 23.17 hours of print time using the standard manufacture setup. \\ \hline
+    \textbf{Cost} & 10.53 USD. \\ \hline
+    \textbf{Blueprints} & \raisebox{-\height}{\centering \includegraphics[width=0.6\textwidth]{images/parts/arm/left_aux/tech.png}} \\ \hline
+\end{tabularx}
+
+\clearpage
+
+\fakesubsubsection{Right Axis Driver}
+
+\begin{tabularx}{\linewidth}{|p{4cm}|X|}
+    \hline \multicolumn{2}{|c|}{\textbf{Cartesian Arm: Right Axis Driver}} \\ \hline
+    \textbf{STL File} & \href{https://github.com/gdh-uniandes/gpr20_cartesian_arm/tree/main/stl}{right\_axis\_driver.stl} \\ \hline
+    \textbf{IPT File} & \href{https://github.com/gdh-uniandes/gpr20_cartesian_arm/tree/main/ipt}{right\_axis\_driver.ipt} \\ \hline
+    \textbf{Image} & \raisebox{-\height}{\centering \includegraphics[width=0.4\textwidth]{images/parts/arm/right_driver/x_axis_right_driver.png}} \\ \hline
+    \textbf{Description} & This part holds a NEMA 23 stepper motor that is in charge of the movement along the X axis of the Cartesian arm. This component has screw holes in its front to attach the NEMA 23 motor and two supports for the steel rods. A connector for a ground support element is provided in its bottom. A connector for the lateral PVC tube is provided in its left side. \\ \hline
+    \textbf{Source} & Custom part. Manufactured using the FDM 3D printing process with PLA as raw material. Requires 344 grams of PLA and 23.82 hours of print time using the standard manufacture setup. \\ \hline
+    \textbf{Cost} & 10.46 USD. \\ \hline
+    \textbf{Blueprints} & \raisebox{-\height}{\centering \includegraphics[width=0.6\textwidth]{images/parts/arm/right_driver/tech.png}} \\ \hline
+\end{tabularx}
+
+\clearpage
+
+\fakesubsubsection{Left Axis Auxiliary}
+
+\begin{tabularx}{\linewidth}{|p{4cm}|X|}
+    \hline \multicolumn{2}{|c|}{\textbf{Cartesian Arm: Right Axis Auxiliary}} \\ \hline
+    \textbf{STL File} & \href{https://github.com/gdh-uniandes/gpr20_cartesian_arm/tree/main/stl}{right\_axis\_aux.stl} \\ \hline
+    \textbf{IPT File} & \href{https://github.com/gdh-uniandes/gpr20_cartesian_arm/tree/main/ipt}{right\_axis\_aux.ipt} \\ \hline
+    \textbf{Image} & \raisebox{-\height}{\centering \includegraphics[width=0.4\textwidth]{images/parts/arm/right_aux/x_axis_right_aux.png}} \\ \hline
+    \textbf{Description} & This part serves as the auxiliary support for the \textit{right axis driver} on the X axis of the Cartesian arm. This parts allows to screw in the supports for the linear screw and the stability rods in its front. The bottom of the part provides a connector for a ground support element. The left side also has a connector for the lateral PVC tube. \\ \hline
+    \textbf{Source} & Custom part. Manufactured using the FDM 3D printing process with PLA as raw material. Requires 342 grams of PLA and 22.72 hours of print time using the standard manufacture setup. \\ \hline
+    \textbf{Cost} & 10.30 USD. \\ \hline
+    \textbf{Blueprints} & \raisebox{-\height}{\centering \includegraphics[width=0.6\textwidth]{images/parts/arm/left_aux/tech.png}} \\ \hline
+\end{tabularx}
+
+\clearpage
+
+\fakesubsubsection{X-Axis Axis Driver}
+
+\begin{tabularx}{\linewidth}{|p{4cm}|X|}
+    \hline \multicolumn{2}{|c|}{\textbf{Cartesian Arm: X Axis Driver}} \\ \hline
+    \textbf{STL File} & \href{https://github.com/gdh-uniandes/gpr20_cartesian_arm/tree/main/stl}{x\_axis\_driver.stl} \\ \hline
+    \textbf{IPT File} & \href{https://github.com/gdh-uniandes/gpr20_cartesian_arm/tree/main/ipt}{x\_axis\_driver.ipt} \\ \hline
+    \textbf{Image} & \raisebox{-\height}{\centering \includegraphics[width=0.4\textwidth]{images/parts/arm/y_driver/y_axis_driver.png}} \\ \hline
+    \textbf{Description} & This part provides the support for the Y axis NEMA23 motor and linear rods. The part also has the screw holes for the linear bearings and linear screw hexagonal nut holder of the left X axis. The part includes holes on its top side to mount a drag chain for cable management and the endstop sensor extender. \\ \hline
+    \textbf{Source} & Custom part. Manufactured using the FDM 3D printing process with PLA as raw material. Requires 169 grams of PLA and 12.18 hours of print time using the standard manufacture setup. \\ \hline
+    \textbf{Cost} & 5.19 USD. \\ \hline
+    \textbf{Blueprints} & \raisebox{-\height}{\centering \includegraphics[width=0.6\textwidth]{images/parts/arm/y_driver/tech.png}} \\ \hline
+\end{tabularx}
+
+\clearpage
+
+\fakesubsubsection{X-Axis Auxiliary Support}
+
+\begin{tabularx}{\linewidth}{|p{4cm}|X|}
+    \hline \multicolumn{2}{|c|}{\textbf{Cartesian Arm: X Axis Auxiliary Support}} \\ \hline
+    \textbf{STL File} & \href{https://github.com/gdh-uniandes/gpr20_cartesian_arm/tree/main/stl}{x\_axis\_aux.stl} \\ \hline
+    \textbf{IPT File} & \href{https://github.com/gdh-uniandes/gpr20_cartesian_arm/tree/main/ipt}{x\_axis\_aux.ipt} \\ \hline
+    \textbf{Image} & \raisebox{-\height}{\centering \includegraphics[width=0.4\textwidth]{images/parts/arm/y_aux/y_axis_aux.png}} \\ \hline
+    \textbf{Description} & This part is the auxiliary support of the Y axis. It provides the screw holes for mounting the supports of the linear screw and rods of the Y axis. It also provides the screw holes for the linear bearings and linear screw hexagonal nut holder of the right X axis. \\ \hline
+    \textbf{Source} & Custom part. Manufactured using the FDM 3D printing process with PLA as raw material. Requires 162 grams of PLA and 11.85 hours of print time using the standard manufacture setup. \\ \hline
+    \textbf{Cost} & 4.99 USD. \\ \hline
+    \textbf{Blueprints} & \raisebox{-\height}{\centering \includegraphics[width=0.6\textwidth]{images/parts/arm/y_aux/tech.png}} \\ \hline
+\end{tabularx}
+
+\clearpage
+
+\fakesubsubsection{X-Axis Extender}
+
+\begin{tabularx}{\linewidth}{|p{4cm}|X|}
+    \hline \multicolumn{2}{|c|}{\textbf{Cartesian Arm: Y Axis Extender}} \\ \hline
+    \textbf{STL File} & \href{https://github.com/gdh-uniandes/gpr20_cartesian_arm/tree/main/stl}{y\_extender.stl} \\ \hline
+    \textbf{IPT File} & \href{https://github.com/gdh-uniandes/gpr20_cartesian_arm/tree/main/ipt}{y\_extender.ipt} \\ \hline
+    \textbf{Image} & \raisebox{-\height}{\centering \includegraphics[width=0.4\textwidth]{images/parts/arm/x_extender/x_extender.png}} \\ \hline
+    \textbf{Description} & This part provides the support for the X axis endstop sensor and the X axis drag chain. It is attached to the \textit{left axis driver} using two (2) M3 screws. \\ \hline
+    \textbf{Source} & Custom part. Manufactured using the FDM 3D printing process with PLA as raw material. Requires 15 grams of PLA and 1.62 hours of print time using the standard manufacture setup. \\ \hline
+    \textbf{Cost} & 0.52 USD. \\ \hline
+    \textbf{Blueprints} & \raisebox{-\height}{\centering \includegraphics[width=0.6\textwidth]{images/parts/arm/x_extender/tech.png}} \\ \hline
+\end{tabularx}
+
+\clearpage
+
+\fakesubsubsection{Y-Axis Extender}
+
+\begin{tabularx}{\linewidth}{|p{4cm}|X|}
+    \hline \multicolumn{2}{|c|}{\textbf{Cartesian Arm: X Axis Extender}} \\ \hline
+    \textbf{STL File} & \href{https://github.com/gdh-uniandes/gpr20_cartesian_arm/tree/main/stl}{x\_extender.stl} \\ \hline
+    \textbf{IPT File} & \href{https://github.com/gdh-uniandes/gpr20_cartesian_arm/tree/main/ipt}{x\_extender.ipt} \\ \hline
+    \textbf{Image} & \raisebox{-\height}{\centering \includegraphics[width=0.4\textwidth]{images/parts/arm/y_extender/y_extender.png}} \\ \hline
+    \textbf{Description} & This part provides support for the Y axis endstop sensor. It is attached to the \textit{Y Axis Driver} using two (2) M3 screws. \\ \hline
+    \textbf{Source} & Custom part. Manufactured using the FDM 3D printing process with PLA as raw material. Requires 8 grams of PLA and 0.72 hours of print time using the standard manufacture setup. \\ \hline
+    \textbf{Cost} & 0.26 USD. \\ \hline
+    \textbf{Blueprints} & \raisebox{-\height}{\centering \includegraphics[width=0.6\textwidth]{images/parts/arm/y_extender/tech.png}} \\ \hline
+\end{tabularx}
+
+\subsubsection{Cartesian Arm: Third Party Components}
+Third-party components used for the Cartesian arm are a set of screws and inserts, PVC tubing, and components to attach the rods and screws to the main structure. Table \ref{tab:cartesian_third_party} presents a summary of the used components to assembly the Cartesian arm. M3 screws are used to attach the X-Axis and Y-Axis extenders to their corresponding drivers, and to attach the drag chain and endstop sensors to the extenders themselves. M4 screws are used to attach the SC12UU linear bearing to their axes and to attach the T8 nut housing. The T8 nut is attached to the housing using M2 screws. Finally, M5 screws are used to attach both the SHF12 and KFL8 supports to the Cartesian Arm parts.
+
+\begin{table}[h]
+    \centering
+    \begin{tabular}{|c|c|}
+        \textbf{Component} & \textbf{Quantity} \\ \hline
+        M2 Screws & 4 \\
+        M3 Screws & 9 \\
+        M4 Screws & 30 \\
+        M5 Screws & 30 \\
+        SHF12 & 12 \\
+        SC12UU & 6 \\
+        KFL8 & 3 \\
+        T8 nut and housing & 3 \\
+        12mm rod (1000mm) & 6 \\
+        8mm linear screw (1000mm) & 3 \\
+        PVC tubing (1000mm) & 2 \\
+    \end{tabular}
+    \caption{Summary of the third party components used in the ground support group of the GPR-20 robot.}
+    \label{tab:cartesian_third_party}
+\end{table}
+
+\subsection{GPR Support}
+
+\begin{figure}[h]
+    \centering
+    \includegraphics[width=0.7\textwidth]{images/groups/vna_holder.png}
+    \caption{GPR support group.}
+    \label{fig:gpr_support_group}
+\end{figure}
+
+The GPR support group are the set of elements that provide the mechanical support for the Vector Network Analyzer (VNA) and the antennae. The GPR support group is moved by the Cartesian arm to acquire data within the sampling area. The GPR support group consists of ten (10) custom parts and some additional third-party parts. The GPR support also allows the usage of two NEMA 17 motors that are used to rotate the antennae in order to acquire data from two different polarizations. Table \ref{tab:gpr_support} presents a summary of the custom components, its required filament and cost.
+
+\begin{table}[h]
+    \centering
+    \csvreader[tabular = |c|c|c|,
+        table head=\hline \textbf{Name} & \textbf{Used Filament [gr]} & \textbf{Cost [USD]}  \\ \hline,
+        late after line =\\,
+        late after last line = \\\hline,
+        respect underscore = true
+    ]%
+    {data/gpr_summary.csv}%
+    {cname=\cname, filament=\filament, cost=\cost}%
+    {\cname & \filament & \cost}%
+    \caption{Summary of the cost and filament usage for the GPR support group.}
+    \label{tab:gpr_support}
+\end{table}
+
+
+\clearpage
+
+\fakesubsubsection{Universal Mount}
+
+\begin{tabularx}{\linewidth}{|p{4cm}|X|}
+    \hline \multicolumn{2}{|c|}{\textbf{GPR Support: Universal Mount}} \\ \hline
+    \textbf{STL File} & \href{https://github.com/gdh-uniandes/gpr20_vna_holder/tree/main/stl}{universal\_mount.stl} \\ \hline
+    \textbf{IPT File} & \href{https://github.com/gdh-uniandes/gpr20_vna_holder/tree/main/ipt}{universal\_mount.ipt} \\ \hline
+    \textbf{Image} & \raisebox{-\height}{\centering \includegraphics[width=0.4\textwidth]{images/parts/antenna/universal_mount/universal_mount.png}} \\ \hline
+    \textbf{Description} & This part attaches the GPR support with the Cartesian arm. The attachment is done through the linear screw hexagonal nut mount and the linear rod bearings. The universal mount has the required screw holes to mount both the hexagonal nut mount and the linear bearings. The universal mount also has four (4) M5 screw holes to attach the side panels of the GPR support. It also has additional M3 screw holes to mount an auxiliary element if needed.  \\ \hline
+    \textbf{Source} & Custom part. Manufactured using the FDM 3D printing process with PLA as raw material. Requires 116 grams of PLA and 10.28 hours of print time using the standard manufacture setup. \\ \hline
+    \textbf{Cost} & 3.77 USD. \\ \hline
+    \textbf{Blueprints} & \raisebox{-\height}{\centering \includegraphics[width=0.4\textwidth]{images/parts/antenna/universal_mount/tech.png}} \\ \hline
+\end{tabularx}
+
+\clearpage
+
+\fakesubsubsection{Side Panel}
+
+\begin{tabularx}{\linewidth}{|p{4cm}|X|}
+    \hline \multicolumn{2}{|c|}{\textbf{GPR Support: Side Panel}} \\ \hline
+    \textbf{STL File} & \href{https://github.com/gdh-uniandes/gpr20_vna_holder/tree/main/stl}{side\_panel.stl} \\ \hline
+    \textbf{IPT File} & \href{https://github.com/gdh-uniandes/gpr20_vna_holder/tree/main/ipt}{side\_panel.ipt} \\ \hline
+    \textbf{Image} & \raisebox{-\height}{\centering \includegraphics[width=0.4\textwidth]{images/parts/antenna/side_panel/side_panel.png}} \\ \hline
+    \textbf{Description} & The side panel has two main functionalities: providing support for the \textit{VNA mount} and the \textit{antennae holder}, and clearing the space for the electronics box of the robot. Two instances of the side panel are used in the robot. Each side panel is attached using two (2) M5 screws to the \textit{universal mount} part. The side panel is also attached to the \textit{auxiliary strut} with two (2) M2 screws. The side panel is mounted to the \textit{antennae holder} and the \textit{VNA mount} with four (4) M5 screws, two (2) for the \textit{antennae holder} and two (2) for the \textit{VNA mount}. \\ \hline
+    \textbf{Source} & Custom part. Manufactured using the FDM 3D printing process with PLA as raw material. Requires 150 grams of PLA and 10.25 hours of print time using the standard manufacture setup. \\ \hline
+    \textbf{Cost} & 4.55 USD. \\ \hline
+    \textbf{Blueprints} & \raisebox{-\height}{\centering \includegraphics[width=0.3\textwidth]{images/parts/antenna/side_panel/tech.png}} \\ \hline
+\end{tabularx}
+
+\clearpage
+
+\fakesubsubsection{VNA Mount}
+
+\begin{tabularx}{\linewidth}{|p{4cm}|X|}
+    \hline \multicolumn{2}{|c|}{\textbf{GPR Support: VNA Mount}} \\ \hline
+    \textbf{STL File} & \href{https://github.com/gdh-uniandes/gpr20_vna_holder/tree/main/stl}{vna\_mount.stl} \\ \hline
+    \textbf{IPT File} & \href{https://github.com/gdh-uniandes/gpr20_vna_holder/tree/main/ipt}{vna\_mount.ipt} \\ \hline
+    \textbf{Image} & \raisebox{-\height}{\centering \includegraphics[width=0.6\textwidth]{images/parts/antenna/vna_mount/vna_mount.png}} \\ \hline
+    \textbf{Description} & This part serves as a base for mounting the Vector Network Analyzer (VNA). It is mounted on top of the \textit{side panels} using four (4) M5 screws. The VNA Mount is also attached to the \textit{VNA Cover} through four (M5) screws. \\ \hline
+    \textbf{Source} & Custom part. Manufactured using the FDM 3D printing process with PLA as raw material. Requires 261 grams of PLA and 30.17 hours of print time using the standard manufacture setup. \\ \hline
+    \textbf{Cost} & 9.23 USD. \\ \hline
+    \textbf{Blueprints} & \raisebox{-\height}{\centering \includegraphics[width=0.6\textwidth]{images/parts/antenna/vna_mount/tech.png}} \\ \hline
+\end{tabularx}
+
+\clearpage
+
+\fakesubsubsection{VNA Cover}
+
+\begin{tabularx}{\linewidth}{|p{4cm}|X|}
+    \hline \multicolumn{2}{|c|}{\textbf{GPR Support: VNA Cover}} \\ \hline
+    \textbf{STL File} & \href{https://github.com/gdh-uniandes/gpr20_vna_holder/tree/main/stl}{vna\_cover.stl} \\ \hline
+    \textbf{IPT File} & \href{https://github.com/gdh-uniandes/gpr20_vna_holder/tree/main/ipt}{vna\_cover.ipt} \\ \hline
+    \textbf{Image} & \raisebox{-\height}{\centering \includegraphics[width=0.4\textwidth]{images/parts/antenna/vna_cover/vna_cover.png}} \\ \hline
+    \textbf{Description} & The VNA Cover, as its name suggest, is the part that protects the VNA device from the environment. The VNA Cover is attached to the \textit{VNA Mount} using four (4) M5 screws located in its bottom. It also has the capability to attach a transparent cover on its top using four (4) M2 screws. \\ \hline
+    \textbf{Source} & Custom part. Manufactured using the FDM 3D printing process with PLA as raw material. Requires 444 grams of PLA and 43.73 hours of print time using the standard manufacture setup. \\ \hline
+    \textbf{Cost} & 14.89 USD. \\ \hline
+    \textbf{Blueprints} & \raisebox{-\height}{\centering \includegraphics[width=0.4\textwidth]{images/parts/antenna/vna_cover/tech.png}} \\ \hline
+\end{tabularx}
+
+\clearpage
+
+\fakesubsubsection{Antennae Holder}
+
+\begin{tabularx}{\linewidth}{|p{4cm}|X|}
+    \hline \multicolumn{2}{|c|}{\textbf{GPR Support: Antennae Holder}} \\ \hline
+    \textbf{STL File} & \href{https://github.com/gdh-uniandes/gpr20_vna_holder/tree/main/stl}{antennae\_holder.stl} \\ \hline
+    \textbf{IPT File} & \href{https://github.com/gdh-uniandes/gpr20_vna_holder/tree/main/ipt}{antennae\_holder.ipt} \\ \hline
+    \textbf{Image} & \raisebox{-\height}{\centering \includegraphics[width=0.4\textwidth]{images/parts/antenna/antennae_holder/antennae_holder.png}} \\ \hline
+    \textbf{Description} & The Antennae Holder is the part that supports the antennae through two NEMA 17 motors. This part is mounted to the \textit{side panels} using four (4) M5 screws. The NEMA 17 motors, used to rotate the antennae are mounted using four (4) M3 screws per motor. Despite not having a direct support structure, the \textit{IR Sensor Mount} and \textit{IR Sensor Cap} are mounted on the middle strut at the center of the part. \\ \hline
+    \textbf{Source} & Custom part. Manufactured using the FDM 3D printing process with PLA as raw material. Requires 337 grams of PLA and 24.75 hours of print time using the standard manufacture setup. \\ \hline
+    \textbf{Cost} & 10.40 USD. \\ \hline
+    \textbf{Blueprints} & \raisebox{-\height}{\centering \includegraphics[width=0.4\textwidth]{images/parts/antenna/antennae_holder/tech.png}} \\ \hline
+\end{tabularx}
+
+\clearpage
+
+\fakesubsubsection{Auxiliary Strut}
+
+\begin{tabularx}{\linewidth}{|p{4cm}|X|}
+    \hline \multicolumn{2}{|c|}{\textbf{GPR Support: Auxiliary Strut}} \\ \hline
+    \textbf{STL File} & \href{https://github.com/gdh-uniandes/gpr20_vna_holder/tree/main/stl}{aux\_strut.stl} \\ \hline
+    \textbf{IPT File} & \href{https://github.com/gdh-uniandes/gpr20_vna_holder/tree/main/ipt}{aux\_strut.ipt} \\ \hline
+    \textbf{Image} & \raisebox{-\height}{\centering \includegraphics[width=0.4\textwidth]{images/parts/antenna/aux_strut/aux_strut.png}} \\ \hline
+    \textbf{Description} & This is an auxiliary part that intends to increase the stability and robustness of the GPR support structure. This part is attached to the \textit{side panels} using four (4) M3 screws. It is also the part in which the \textit{auxiliary axis support} and \textit{auxiliary axis cap} are mounted. \\ \hline
+    \textbf{Source} & Custom part. Manufactured using the FDM 3D printing process with PLA as raw material. Requires 40 grams of PLA and 3.52 hours of print time using the standard manufacture setup. \\ \hline
+    \textbf{Cost} & 1.30 USD. \\ \hline
+    \textbf{Blueprints} & \raisebox{-\height}{\centering \includegraphics[width=0.6\textwidth]{images/parts/antenna/aux_strut/tech.png}} \\ \hline
+\end{tabularx}
+
+\clearpage
+
+\fakesubsubsection{Auxiliary Axis Support}
+
+\begin{tabularx}{\linewidth}{|p{4cm}|X|}
+    \hline \multicolumn{2}{|c|}{\textbf{GPR Support: Auxiliary Axis Support}} \\ \hline
+    \textbf{STL File} & \href{https://github.com/gdh-uniandes/gpr20_vna_holder/tree/main/stl}{aux\_axis\_support.stl} \\ \hline
+    \textbf{IPT File} & \href{https://github.com/gdh-uniandes/gpr20_vna_holder/tree/main/ipt}{aux\_axis\_support.ipt} \\ \hline
+    \textbf{Image} & \raisebox{-\height}{\centering \includegraphics[width=0.4\textwidth]{images/parts/antenna/aux_axis_support/aux_axis_support.png}} \\ \hline
+    \textbf{Description} & This part purpose is to increase the stability of the GPR support structure by adding support to the axis linear bearings. The part interfaces with the bearings by foam pieces that must be installed to fit the gap between the parts. The support is mounted over the \textit{auxiliary strut} and secured with the \textit{auxiliary axis cap} with two (2) M3 screws. Two of the supports are required: one per linear bearing. \\ \hline
+    \textbf{Source} & Custom part. Manufactured using the FDM 3D printing process with PLA as raw material. Requires 12 grams of PLA and 0.98 hours of print time using the standard manufacture setup. \\ \hline
+    \textbf{Cost} & 0.38 USD. \\ \hline
+    \textbf{Blueprints} & \raisebox{-\height}{\centering \includegraphics[width=0.5\textwidth]{images/parts/antenna/aux_axis_support/tech.png}} \\ \hline
+\end{tabularx}
+
+\clearpage
+
+\fakesubsubsection{Auxiliary Axis Cap}
+
+\begin{tabularx}{\linewidth}{|p{4cm}|X|}
+    \hline \multicolumn{2}{|c|}{\textbf{GPR Support: Auxiliary Axis Cap}} \\ \hline
+    \textbf{STL File} & \href{https://github.com/gdh-uniandes/gpr20_vna_holder/tree/main/stl}{aux\_axis\_cap.stl} \\ \hline
+    \textbf{IPT File} & \href{https://github.com/gdh-uniandes/gpr20_vna_holder/tree/main/ipt}{aux\_axis\_cap.ipt} \\ \hline
+    \textbf{Image} & \raisebox{-\height}{\centering \includegraphics[width=0.4\textwidth]{images/parts/antenna/aux_axis_cap/aux_axis_cap.png}} \\ \hline
+    \textbf{Description} & This part is used to mount the \textit{auxiliary axis support} to the \textit{auxiliary strut}. It is attached to the \textit{aux. axis support} via two (2) M3 screws. \\ \hline
+    \textbf{Source} & Custom part. Manufactured using the FDM 3D printing process with PLA as raw material. Requires 9 grams of PLA and 0.75 hours of print time using the standard manufacture setup. \\ \hline
+    \textbf{Cost} & 0.29 USD. \\ \hline
+    \textbf{Blueprints} & \raisebox{-\height}{\centering \includegraphics[width=0.5\textwidth]{images/parts/antenna/aux_axis_cap/tech.png}} \\ \hline
+\end{tabularx}
+
+\clearpage
+
+\fakesubsubsection{IR Sensor Support}
+
+\begin{tabularx}{\linewidth}{|p{4cm}|X|}
+    \hline \multicolumn{2}{|c|}{\textbf{GPR Support: IR Sensor Support}} \\ \hline
+    \textbf{STL File} & \href{https://github.com/gdh-uniandes/gpr20_vna_holder/tree/main/stl}{ir\_sensor\_support.stl} \\ \hline
+    \textbf{IPT File} & \href{https://github.com/gdh-uniandes/gpr20_vna_holder/tree/main/ipt}{ir\_sensor\_support.ipt} \\ \hline
+    \textbf{Image} & \raisebox{-\height}{\centering \includegraphics[width=0.4\textwidth]{images/parts/antenna/ir_support/ir_support.png}} \\ \hline
+    \textbf{Description} & This part is used to mount the IR sensor of the robot. This part has screw holes in its bottom to attach the sensor using two (2) M3 screws. The support is mounted on the \textit{antennae mount} and secured using the \textit{IR sensor cap}. To secure the sensor support, two (2) additional M3 screws are used to attach the \textit{IR sensor cap}.  \\ \hline
+    \textbf{Source} & Custom part. Manufactured using the FDM 3D printing process with PLA as raw material. Requires 12 grams of PLA and 0.97 hours of print time using the standard manufacture setup. \\ \hline
+    \textbf{Cost} & 0.38 USD. \\ \hline
+    \textbf{Blueprints} & \raisebox{-\height}{\centering \includegraphics[width=0.5\textwidth]{images/parts/antenna/ir_support/tech.png}} \\ \hline
+\end{tabularx}
+
+\clearpage
+
+\fakesubsubsection{IR Sensor Cap}
+
+\begin{tabularx}{\linewidth}{|p{4cm}|X|}
+    \hline \multicolumn{2}{|c|}{\textbf{GPR Support: IR Sensor Cap}} \\ \hline
+    \textbf{STL File} & \href{https://github.com/gdh-uniandes/gpr20_vna_holder/tree/main/stl}{ir\_sensor\_cap.stl} \\ \hline
+    \textbf{IPT File} & \href{https://github.com/gdh-uniandes/gpr20_vna_holder/tree/main/ipt}{ir\_sensor\_cap.ipt} \\ \hline
+    \textbf{Image} & \raisebox{-\height}{\centering \includegraphics[width=0.4\textwidth]{images/parts/antenna/ir_cap/ir_cap.png}} \\ \hline
+    \textbf{Description} & The sensor cap is used to secure the \textit{IR sensor support} to the \textit{antennae mount}. The part is secured using two (2) M3 screws. \\ \hline
+    \textbf{Source} & Custom part. Manufactured using the FDM 3D printing process with PLA as raw material. Requires 2 grams of PLA and 0.22 hours of print time using the standard manufacture setup. \\ \hline
+    \textbf{Cost} & 0.07 USD. \\ \hline
+    \textbf{Blueprints} & \raisebox{-\height}{\centering \includegraphics[width=0.5\textwidth]{images/parts/antenna/ir_cap/tech.png}} \\ \hline
+\end{tabularx}
+
+\clearpage
+
+\subsubsection{GPR Support: Third-Party Components}
+The used third-party components used for the GPR support group are screws, inserts and elements required to attach the support to the linear rods and screws of the Cartesian arm. The support group uses M3, M4 and M5 screws and its corresponding inserts to attach every component to each other. Table \ref{tab:gpr_third_party} presents a summary of the third-party components used in the GPR-20 support group.
+
+\begin{table}[h]
+    \centering
+    \begin{tabular}{|c|c|}
+        \textbf{Component} & \textbf{Quantity} \\ \hline
+        M3 screws & 18 \\
+        M4 screws & 14 \\
+        M4 inserts & 8 \\
+        M5 screws & 8 \\
+        M5 inserts & 8 \\
+        NEMA 17 & 2 \\
+        SC12UU & 2 \\
+        T8 nut & 1 \\
+    \end{tabular}
+    \caption{Summary for the third-party components used in the GPR support group. }
+    \label{tab:gpr_third_party}
+\end{table}
+
+\clearpage
+\subsection{Electronics Box}
+
+\begin{figure}[h]
+    \centering
+    \includegraphics[width=0.7\textwidth]{images/groups/electronics_box.png}
+    \caption{Electronics box group assembly.}
+    \label{fig:electronics_box_assembly}
+\end{figure}
+
+The electronics box is the housing for the electronics and power systems of the GPR-20 robot. The electronics box is shown on figure \ref{fig:electronics_box_assembly} while mounted over the PVC pipes from the Cartesian arm. The electronics box serves as the element that supports a touch screen that is intended to serve as an user interface. Table \ref{tab:electronics_box} presents a summary with the electronics box components, its material usage and its cost.
+
+\begin{table}[h]
+    \centering
+    \csvreader[tabular = |c|c|c|,
+        table head=\hline \textbf{Name} & \textbf{Used Filament [gr]} & \textbf{Cost [USD]}  \\ \hline,
+        late after line =\\,
+        late after last line = \\\hline,
+        respect underscore = true
+    ]%
+    {data/electronics_box.csv}%
+    {cname=\cname, filament=\filament, cost=\cost}%
+    {\cname & \filament & \cost}%
+    \caption{Summary of the cost and filament usage for the GPR-20 electronics box.}
+    \label{tab:electronics_box}
+\end{table}
+
+%\begin{tabularx}{\linewidth}{|p{4cm}|X|}
+%    \hline \multicolumn{2}{|c|}{\textbf{Electronics Box: Power Supply Case}} \\ \hline
+%    \textbf{Image} & \raisebox{-\height}{\centering \includegraphics[width=0.4\textwidth]{images/parts/electronics/power_supply_case/power_supply_case.png}} \\ \hline
+%    \textbf{Description} &  \\ \hline
+%    \textbf{Source} & Custom part. Manufactured using the FDM 3D printing process with PLA as raw material. Requires  grams of PLA and  hours of print time using the standard manufacture setup. \\ \hline
+%    \textbf{Cost} &  USD. \\ \hline
+%    \textbf{Blueprints} & \raisebox{-\height}{\centering \includegraphics[width=0.5\textwidth]{images/parts/electronics/power_supply_case/tech.png}} \\ \hline
+%\end{tabularx}
+
+\clearpage
+
+\fakesubsubsection{Power Supply Case}
+
+\begin{tabularx}{\linewidth}{|p{4cm}|X|}
+    \hline \multicolumn{2}{|c|}{\textbf{Electronics Box: Power Supply Case}} \\ \hline
+    \textbf{STL File} & \href{https://github.com/gdh-uniandes/gpr20_electronics_box/tree/main/stl}{power\_supply\_case.stl} \\ \hline
+    \textbf{IPT File} & \href{https://github.com/gdh-uniandes/gpr20_electronics_box/tree/main/ipt}{power\_supply\_case.ipt} \\ \hline
+    \textbf{Image} & \raisebox{-\height}{\centering \includegraphics[width=0.4\textwidth]{images/parts/electronics/power_supply_case/power_supply_case.png}} \\ \hline
+    \textbf{Description} & The power supply case is the part that holds and protects the power supply from the environment. The power supply is attached to the case using four (4) M3 screws located on the bottom of the part. The power supply case is the lowest part of the electronics box and is attached to the bottom part of the tube adapter (\textit{Lower PVC Adapter}) via four (4) M4 screws. The power supply case has holes that allow cables to pass from and to the electronics box. \\ \hline
+    \textbf{Source} & Custom part. Manufactured using the FDM 3D printing process with PLA as raw material. Requires 351 grams of PLA and 23.40 hours of print time using the standard manufacture setup. \\ \hline
+    \textbf{Cost} & 10.58 USD. \\ \hline
+    \textbf{Blueprints} & \raisebox{-\height}{\centering \includegraphics[width=0.4\textwidth]{images/parts/electronics/power_supply_case/tech.png}} \\ \hline
+\end{tabularx}
+
+\clearpage
+
+\fakesubsubsection{Lower PVC Adapter}
+
+\begin{tabularx}{\linewidth}{|p{4cm}|X|}
+    \hline \multicolumn{2}{|c|}{\textbf{Electronics Box: Lower PVC Adapter}} \\ \hline
+    \textbf{STL File} & \href{https://github.com/gdh-uniandes/gpr20_electronics_box/tree/main/stl}{lower\_pvc\_adapter.stl} \\ \hline
+    \textbf{IPT File} & \href{https://github.com/gdh-uniandes/gpr20_electronics_box/tree/main/ipt}{lower\_pvc\_adapter.ipt} \\ \hline
+    \textbf{Image} & \raisebox{-\height}{\centering \includegraphics[width=0.4\textwidth]{images/parts/electronics/lower_pvc_adapter/lower_pvc_adapter.png}} \\ \hline
+    \textbf{Description} & The lower PVC adapter is one out of the two parts that attaches the electronics box to the lateral PVC tube. The adapter is attached to both the \textit{power supply case} and the \textit{upper PVC adapter}. The \textit{power supply case} attachment is done through four (4) M4 screws and the \textit{upper PVC adapter} through another set of four (4) M4 screws. The part has holes for passing the cables through the electronics box and through the PVC tube.  \\ \hline
+    \textbf{Source} & Custom part. Manufactured using the FDM 3D printing process with PLA as raw material. Requires 314 grams of PLA and 17.67 hours of print time using the standard manufacture setup. \\ \hline
+    \textbf{Cost} & 9.11 USD. \\ \hline
+    \textbf{Blueprints} & \raisebox{-\height}{\centering \includegraphics[width=0.25\textwidth]{images/parts/electronics/lower_pvc_adapter/tech.png}} \\ \hline
+\end{tabularx}
+
+\clearpage
+
+\fakesubsubsection{Upper PVC Adapter}
+
+\begin{tabularx}{\linewidth}{|p{4cm}|X|}
+    \hline \multicolumn{2}{|c|}{\textbf{Electronics Box: Upper PVC Adapter}} \\ \hline
+    \textbf{STL File} & \href{https://github.com/gdh-uniandes/gpr20_electronics_box/tree/main/stl}{upper\_pvc\_adapter.stl} \\ \hline
+    \textbf{IPT File} & \href{https://github.com/gdh-uniandes/gpr20_electronics_box/tree/main/ipt}{upper\_pvc\_adapter.ipt} \\ \hline
+    \textbf{Image} & \raisebox{-\height}{\centering \includegraphics[width=0.4\textwidth]{images/parts/electronics/upper_pvc_adapter/upper_pvc_adapter.png}} \\ \hline
+    \textbf{Description} & The upper PVC adapter is the second part that attaches the electronics box to the lateral PVC tube. The adapter is attached to both the \textit{lower PVC adapter} and the \textit{electronics case}. The \textit{lower PVC adapter} attachment is done through four (4) M4 screws while the \textit{electronics case} is attached via four (4) M3 screws. This adapter also has holes for cables passing through the electronics box and the PVC tube. \\ \hline
+    \textbf{Source} & Custom part. Manufactured using the FDM 3D printing process with PLA as raw material. Requires 318 grams of PLA and 18.10 hours of print time using the standard manufacture setup. \\ \hline
+    \textbf{Cost} & 9.25 USD. \\ \hline
+    \textbf{Blueprints} & \raisebox{-\height}{\centering \includegraphics[width=0.2\textwidth]{images/parts/electronics/upper_pvc_adapter/tech.png}} \\ \hline
+\end{tabularx}
+
+\clearpage
+
+\fakesubsubsection{Electronics Case}
+
+\begin{tabularx}{\linewidth}{|p{4cm}|X|}
+    \hline \multicolumn{2}{|c|}{\textbf{Electronics Box: Electronics Case}} \\ \hline
+    \textbf{STL File} & \href{https://github.com/gdh-uniandes/gpr20_electronics_box/tree/main/stl}{electronics\_case.stl} \\ \hline
+    \textbf{IPT File} & \href{https://github.com/gdh-uniandes/gpr20_electronics_box/tree/main/ipt}{electronics\_case.ipt} \\ \hline
+    \textbf{Image} & \raisebox{-\height}{\centering \includegraphics[width=0.4\textwidth]{images/parts/electronics/electronics_case/electronics_case.png}} \\ \hline
+    \textbf{Description} & The electronics case is the container for storing the electronics of the GPR-20 robot. The electronics case has two slots for \textit{electronics trays} and a single hole for cable management of the touch screen cables. The \textit{electronics trays} are inserted from the lateral side of the case and secured using four (4) M2 screws per tray. To close the open side, a side panel (\textit{electronics case panel}) is secured with four (4) M3 screws.  \\ \hline
+    \textbf{Source} & Custom part. Manufactured using the FDM 3D printing process with PLA as raw material. Requires 284 grams of PLA and 25.60 hours of print time using the standard manufacture setup. \\ \hline
+    \textbf{Cost} & 9.27 USD. \\ \hline
+    \textbf{Blueprints} & \raisebox{-\height}{\centering \includegraphics[width=0.5\textwidth]{images/parts/electronics/electronics_case/tech.png}} \\ \hline
+\end{tabularx}
+
+\clearpage
+
+\fakesubsubsection{Electronics Case Panel}
+
+\begin{tabularx}{\linewidth}{|p{4cm}|X|}
+    \hline \multicolumn{2}{|c|}{\textbf{Electronics Box: Electronics Case Panel}} \\ \hline
+    \textbf{STL File} & \href{https://github.com/gdh-uniandes/gpr20_electronics_box/tree/main/stl}{electronics\_case\_panel.stl} \\ \hline
+    \textbf{IPT File} & \href{https://github.com/gdh-uniandes/gpr20_electronics_box/tree/main/ipt}{electronics\_case\_panel.ipt} \\ \hline
+    \textbf{Image} & \raisebox{-\height}{\centering \includegraphics[width=0.4\textwidth]{images/parts/electronics/electronics_panel/electronics_panel.png}} \\ \hline
+    \textbf{Description} & The electronics side panel purpose is to protect the electronics inside the \textit{electronics case}. The part has four (4) M3 screw holes to attach itself to the \textit{electronics case} and four (4) M2 screw holes to attach the \textit{electronics trays}. \\ \hline
+    \textbf{Source} & Custom part. Manufactured using the FDM 3D printing process with PLA as raw material. Requires 38 grams of PLA and 4.30 hours of print time using the standard manufacture setup. \\ \hline
+    \textbf{Cost} & 1.33 USD. \\ \hline
+    \textbf{Blueprints} & \raisebox{-\height}{\centering \includegraphics[width=0.5\textwidth]{images/parts/electronics/electronics_panel/tech.png}} \\ \hline
+\end{tabularx}
+
+\clearpage
+
+\fakesubsubsection{Electronics Board Tray}
+
+\begin{tabularx}{\linewidth}{|p{4cm}|X|}
+    \hline \multicolumn{2}{|c|}{\textbf{Electronics Box: Electronics Board Tray}} \\ \hline
+    \textbf{STL File} & \href{https://github.com/gdh-uniandes/gpr20_electronics_box/tree/main/stl}{electronics\_board\_tray.stl} \\ \hline
+    \textbf{IPT File} & \href{https://github.com/gdh-uniandes/gpr20_electronics_box/tree/main/ipt}{electronics\_board\_tray.ipt} \\ \hline
+    \textbf{Image} & \raisebox{-\height}{\centering \includegraphics[width=0.4\textwidth]{images/parts/electronics/electronics_board_tray/electronics_board_tray.png}} \\ \hline
+    \textbf{Description} & The electronics board tray keeps the custom electronics board in a fixed and secure location within the robot. The electronics board tray is secured to the \textit{electronics case} with four (4) M2 screws. The tray is mechanically reinforced since tension from cables can exert a considerable load to the tray. The electronics board tray is also attached to the \textit{raspi board tray} via four (4) M2 screws. \\ \hline
+    \textbf{Source} & Custom part. Manufactured using the FDM 3D printing process with PLA as raw material. Requires 122 grams of PLA and 13.88 hours of print time using the standard manufacture setup. \\ \hline
+    \textbf{Cost} & 4.29 USD. \\ \hline
+    \textbf{Blueprints} & \raisebox{-\height}{\centering \includegraphics[width=0.5\textwidth]{images/parts/electronics/electronics_board_tray/tech.png}} \\ \hline
+\end{tabularx}
+
+\clearpage
+
+\fakesubsubsection{Raspi Board Tray}
+
+\begin{tabularx}{\linewidth}{|p{4cm}|X|}
+    \hline \multicolumn{2}{|c|}{\textbf{Electronics Box: Raspi Board Tray}} \\ \hline
+    \textbf{STL File} & \href{https://github.com/gdh-uniandes/gpr20_electronics_box/tree/main/stl}{raspi\_board\_tray.stl} \\ \hline
+    \textbf{IPT File} & \href{https://github.com/gdh-uniandes/gpr20_electronics_box/tree/main/ipt}{raspi\_board\_tray.ipt} \\ \hline
+    \textbf{Image} & \raisebox{-\height}{\centering \includegraphics[width=0.4\textwidth]{images/parts/electronics/electronics_raspi_tray/electronics_raspi_tray.png}} \\ \hline
+    \textbf{Description} & The raspi board tray keeps the Raspberry Pi and power converters in a fixed and secure location within the robot. The tray provides support and screw holes to attach the \textit{electronics board tray}. The \textit{electronics board tray} is attached via four (4) M2 screws.  \\ \hline
+    \textbf{Source} & Custom part. Manufactured using the FDM 3D printing process with PLA as raw material. Requires 113 grams of PLA and 12.67 hours of print time using the standard manufacture setup. \\ \hline
+    \textbf{Cost} & 3.95 USD. \\ \hline
+    \textbf{Blueprints} & \raisebox{-\height}{\centering \includegraphics[width=0.5\textwidth]{images/parts/electronics/electronics_raspi_tray/tech.png}} \\ \hline
+\end{tabularx}
+
+\clearpage
+
+\fakesubsubsection{Touchscreen Support}
+
+\begin{tabularx}{\linewidth}{|p{4cm}|X|}
+    \hline \multicolumn{2}{|c|}{\textbf{Electronics Box: Touchscreen Support}} \\ \hline
+    \textbf{STL File} & \href{https://github.com/gdh-uniandes/gpr20_electronics_box/tree/main/stl}{touchscreen\_support.stl} \\ \hline
+    \textbf{IPT File} & \href{https://github.com/gdh-uniandes/gpr20_electronics_box/tree/main/ipt}{touchscreen\_support.ipt} \\ \hline
+    \textbf{Image} & \raisebox{-\height}{\centering \includegraphics[width=0.4\textwidth]{images/parts/electronics/touchscreen_support/touchscreen_support.png}} \\ \hline
+    \textbf{Description} & The touchscreen support purpose is to hold the touchscreen at an angle to improve the user experience. The support is attached to the \textit{electronics case} and the \textit{touchscreen case} via four (4) M3 screws per part. \\ \hline
+    \textbf{Source} & Custom part. Manufactured using the FDM 3D printing process with PLA as raw material. Requires 46 grams of PLA and 2.37 hours of print time using the standard manufacture setup. \\ \hline
+    \textbf{Cost} & 1.31 USD. \\ \hline
+    \textbf{Blueprints} & \raisebox{-\height}{\centering \includegraphics[width=0.4\textwidth]{images/parts/electronics/touchscreen_support/tech.png}} \\ \hline
+\end{tabularx}
+
+\clearpage
+
+\fakesubsubsection{Touchscreen Case}
+
+\begin{tabularx}{\linewidth}{|p{4cm}|X|}
+    \hline \multicolumn{2}{|c|}{\textbf{Electronics Box: Touchscreen Case}} \\ \hline
+    \textbf{STL File} & \href{https://github.com/gdh-uniandes/gpr20_electronics_box/tree/main/stl}{touchscreen\_case.stl} \\ \hline
+    \textbf{IPT File} & \href{https://github.com/gdh-uniandes/gpr20_electronics_box/tree/main/ipt}{touchscreen\_case.ipt} \\ \hline
+    \textbf{Image} & \raisebox{-\height}{\centering \includegraphics[width=0.4\textwidth]{images/parts/electronics/touchscreen_case/touchscreen_case.png}} \\ \hline
+    \textbf{Description} & This part is the mounting case for the touchscreen. It keeps the electronic board safe from the environment while allowing cable management. The case is attached to the \textit{touchscreen lid} and the \textit{touchscreen support} with four (4) M3 screws per part. \\ \hline
+    \textbf{Source} & Custom part. Manufactured using the FDM 3D printing process with PLA as raw material. Requires 182 grams of PLA and 10.83 hours of print time using the standard manufacture setup. \\ \hline
+    \textbf{Cost} & 5.35 USD. \\ \hline
+    \textbf{Blueprints} & \raisebox{-\height}{\centering \includegraphics[width=0.5\textwidth]{images/parts/electronics/touchscreen_case/tech.png}} \\ \hline
+\end{tabularx}
+
+\clearpage
+
+\fakesubsubsection{Touchscreen Lid}
+
+\begin{tabularx}{\linewidth}{|p{4cm}|X|}
+    \hline \multicolumn{2}{|c|}{\textbf{Electronics Box: Touchscreen Lid}} \\ \hline
+    \textbf{STL File} & \href{https://github.com/gdh-uniandes/gpr20_electronics_box/tree/main/stl}{touchscreen\_lid.stl} \\ \hline
+    \textbf{IPT File} & \href{https://github.com/gdh-uniandes/gpr20_electronics_box/tree/main/ipt}{touchscreen\_lid.ipt} \\ \hline
+    \textbf{Image} & \raisebox{-\height}{\centering \includegraphics[width=0.4\textwidth]{images/parts/electronics/ts_box_lid/ts_box_lid.png}} \\ \hline
+    \textbf{Description} & This part is the mounting base for the robot's touch screen. The lid is attached to the \textit{touchscreen case} via four (4) M3 screws. The touchscreen itself is attached through four (4) M3 screws. \\ \hline
+    \textbf{Source} & Custom part. Manufactured using the FDM 3D printing process with PLA as raw material. Requires 39 grams of PLA and 2.42 hours of print time using the standard manufacture setup. \\ \hline
+    \textbf{Cost} & 1.16 USD. \\ \hline
+    \textbf{Blueprints} & \raisebox{-\height}{\centering \includegraphics[width=0.5\textwidth]{images/parts/electronics/ts_box_lid/tech.png}} \\ \hline
+\end{tabularx}
+
+\clearpage
+
+\subsubsection{Electronics Box: Third-Party Components}
+The third party components for the electronics box consist of the required elements to assembly the box. It must be remarked that these elements do not include the electronics and power components of the robot. Table \ref{tab:eb_third_party} presents a summary of the required third-party components for the electronics box group.
+
+\begin{table}[h]
+    \centering
+    \begin{tabular}{|c|c|}
+        \textbf{Component} & \textbf{Quantity} \\ \hline
+        M2 screws & 8 \\
+        M3 screws & 30 \\
+        M5 screws & 4 \\
+        M5 inserts & 4 
+    \end{tabular}
+    \caption{Summary for the third-party components used in the GPR support group. }
+    \label{tab:eb_third_party}
+\end{table}
+
+
+
+\end{document}
